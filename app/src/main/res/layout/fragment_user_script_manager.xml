@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  fragment_user_script_manager.xml — Phase 13 UserScript manager screen.
+  Binding class: FragmentUserScriptManagerBinding
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1A2E">
+
+    <!-- Header toolbar -->
+    <LinearLayout
+        android:id="@+id/script_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="4dp"
+        android:paddingEnd="16dp"
+        android:background="#16213E">
+
+        <ImageButton
+            android:id="@+id/btn_script_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_back"
+            android:tint="#E8E8FF"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/user_scripts"
+            android:textColor="#E8E8FF"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-medium"
+            android:paddingStart="4dp" />
+
+        <!-- Script count badge -->
+        <TextView
+            android:id="@+id/script_count_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#9D97FF"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- Script list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/script_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp" />
+
+    <!-- Empty state -->
+    <TextView
+        android:id="@+id/script_empty_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/user_scripts_none"
+        android:textColor="#707088"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:padding="32dp"
+        android:visibility="gone" />
+
+    <!-- FAB — add new script -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_script"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="#6C63FF"
+        app:tint="#FFFFFF"
+        android:contentDescription="@string/add_script" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

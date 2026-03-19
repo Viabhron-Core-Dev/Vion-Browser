@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/shortcut_label_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/shortcut_name"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/text_hint" />
+
+    <EditText
+        android:id="@+id/shortcut_url_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/url_hint"
+        android:inputType="textUri"
+        android:imeOptions="actionDone"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/text_hint" />
+
+</LinearLayout>

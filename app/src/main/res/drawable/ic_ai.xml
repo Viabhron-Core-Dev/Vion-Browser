@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AI sparkle / star icon (Phase 10) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Central star shape -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,2 L13.5,9 L20,12 L13.5,15 L12,22 L10.5,15 L4,12 L10.5,9 Z" />
+    <!-- Small accent star top-right -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M19,3 L19.8,6 L23,6.8 L19.8,7.6 L19,11 L18.2,7.6 L15,6.8 L18.2,6 Z" />
+</vector>

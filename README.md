@@ -1,7 +1,18 @@
-# PrivacyBrowser
+# Vion Browser
 
-This is a fork of PrivacyBrowser from Soren Stoutner (www.stoutner.com). I don't modify any code just add the translation in German.
+A privacy-first, lightweight Android browser. Fork of Privacy Browser by Soren Stoutner, via the monocles browser fork.
 
-"Privacy Browser is an open source Android web browser focused on user privacy. It is released under the GPLv3+ license.", URL: https://www.stoutner.com/privacy-browser/. Retrieved 15 June 2016
+**Package:** `com.vion.browser`  
+**Min SDK:** 26 (Android 8.0+)  
+**Target SDK:** 36  
+**License:** GPL v3
 
-Original source code: https://git.stoutner.com/?p=PrivacyBrowser.git;a=summary
+## Fork Attribution
+
+- Original: [Privacy Browser](https://www.stoutner.com/privacy-browser) by Soren Stoutner
+- License: GNU General Public License v3 or later
+- All original copyright notices retained.
+
+## Changes from Upstream
+
+See [CHANGES.md](CHANGES.md) for a full log of every modification from upstream and the reason for each change.

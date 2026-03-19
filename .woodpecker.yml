@@ -1,0 +1,10 @@
+pipeline:
+  lint:
+    image: mingc/android-build-box:latest
+    commands:
+      - ./gradlew lint
+
+  build:
+    image: mingc/android-build-box:latest
+    commands:
+      - ./gradlew assembleDebug

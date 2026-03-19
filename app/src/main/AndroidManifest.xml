@@ -2,24 +2,25 @@
 
 <!--
   Copyright 2015-2016 Soren Stoutner <soren@stoutner.com>.
+  Copyright 2026 Vion Browser Contributors.
 
-  This file is part of Privacy Browser <https://www.stoutner.com/privacy-browser>.
+  This file is part of Vion Browser.
 
-  Privacy Browser is free software: you can redistribute it and/or modify
+  Vion Browser is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
 
-  Privacy Browser is distributed in the hope that it will be useful,
+  Vion Browser is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   GNU General Public License for more details.
 
   You should have received a copy of the GNU General Public License
-  along with Privacy Browser.  If not, see <http://www.gnu.org/licenses/>. -->
+  along with Vion Browser.  If not, see <http://www.gnu.org/licenses/>. -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.stoutner.privacybrowser" >
+    package="com.vion.browser">
 
     <!-- Required to load websites. -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -27,32 +28,36 @@
     <!-- Required to create homescreen shortcuts. -->
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
 
-    <!-- For API >= 23, app data is automatically backed up to Google cloud servers unless android:allowBackup="false" and android:fullBackupContent="false" is set. -->
-    <application
-        android:label="@string/privacy_browser"
-        android:icon="@mipmap/privacy_browser"
-        android:theme="@style/PrivacyBrowser"
-        android:allowBackup="false"
-        android:fullBackupContent="false" >
+    <!-- Required for WindowManager overlay (AI window). -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
-        <!-- android:configChanges="orientation|screenSize" makes the activity not reload when the orientation changes, which preserves scroll location in the WebView.
-          android:launchMode="singleTask" makes the app launch in a new task instead of inside the task of the program that sends it an intent.
-          It also makes it reuse an existing Privacy Browser activity if available instead of launching a new one.
-          android:persistableMode="persistNever" removes Privacy Browser from the recents screen on a device reboot. -->
+    <application
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/VionBrowser"
+        android:allowBackup="false"
+        android:fullBackupContent="false">
+
+        <!--
+          android:configChanges="orientation|screenSize" prevents reload on rotation, preserving WebView scroll.
+          android:launchMode="singleTask" reuses existing activity instead of launching a new one.
+          android:persistableMode="persistNever" removes app from recents on reboot.
+        -->
         <activity
             android:name=".MainWebViewActivity"
-            android:label="@string/privacy_browser"
-            android:theme="@style/PrivacyBrowser.MainWebView"
+            android:label="@string/app_name"
+            android:theme="@style/VionBrowser.MainWebView"
             android:configChanges="orientation|screenSize"
             android:launchMode="singleTask"
-            android:persistableMode="persistNever" >
+            android:persistableMode="persistNever"
+            android:windowSoftInputMode="adjustResize">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <!-- android.intent.action.VIEW with the two data schemes enables processing of web intents. -->
+            <!-- Handle web intents so links open in Vion Browser. -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.BROWSABLE" />
@@ -62,37 +67,21 @@
             </intent-filter>
         </activity>
 
-        <!-- android:configChanges="orientation|screenSize" makes the activity not reload when the orientation changes.
-          android:persistableMode="persistNever" removes Privacy Browser from the recents screen on a device reboot. -->
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/privacy_browser_settings"
-            android:theme="@style/PrivacyBrowser.Settings"
+            android:label="@string/settings"
+            android:theme="@style/VionBrowser.Settings"
             android:parentActivityName=".MainWebViewActivity"
             android:configChanges="orientation|screenSize"
-            android:persistableMode="persistNever" >
+            android:persistableMode="persistNever" />
 
-            <!-- android.support.PARENT_ACTIVITY is necessary for API <= 15. -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainWebViewActivity" />
-        </activity>
-
-        <!-- android:configChanges="orientation|screenSize" makes the activity not reload when the orientation changes.
-          android:persistableMode="persistNever" removes Privacy Browser from the recents screen on a device reboot. -->
         <activity
             android:name=".AboutActivity"
-            android:label="@string/about_privacy_browser"
-            android:theme="@style/PrivacyBrowser.About"
+            android:label="@string/about_vion"
+            android:theme="@style/VionBrowser.About"
             android:parentActivityName=".MainWebViewActivity"
             android:configChanges="orientation|screenSize"
-            android:persistableMode="persistNever" >
-
-            <!-- android.support.PARENT_ACTIVITY is necessary for API <= 15. -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainWebViewActivity" />
-        </activity>
+            android:persistableMode="persistNever" />
 
     </application>
 

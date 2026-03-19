@@ -2,53 +2,86 @@
 
 <!--
   Copyright 2015-2016 Soren Stoutner <soren@stoutner.com>.
+  Copyright 2026 Vion Browser Contributors.
 
-  This file is part of Privacy Browser <https://www.stoutner.com/privacy-browser>.
+  This file is part of Vion Browser.
 
-  Privacy Browser is free software: you can redistribute it and/or modify
+  Vion Browser is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
 
-  Privacy Browser is distributed in the hope that it will be useful,
+  Vion Browser is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   GNU General Public License for more details.
 
   You should have received a copy of the GNU General Public License
-  along with Privacy Browser.  If not, see <http://www.gnu.org/licenses/>. -->
+  along with Vion Browser.  If not, see <http://www.gnu.org/licenses/>. -->
 
 <resources>
-    <!-- Activities. -->
-    <string name="privacy_browser">Privacy Browser</string>
-    <string name="privacy_browser_settings">Privacy Browser Settings</string>
+    <!-- App name -->
+    <string name="app_name">Vion Browser</string>
+    <string name="app_name_short">Vion</string>
 
-    <!-- MainWebViewActivity. -->
+    <!-- MainWebViewActivity -->
     <string name="download_started">Download started</string>
     <string name="privacy_mode">Privacy Mode</string>
     <string name="javascript_enabled">JavaScript enabled</string>
     <string name="javascript_disabled">JavaScript disabled</string>
     <string name="cookies_deleted">Cookies deleted</string>
     <string name="dom_storage_deleted">DOM Storage deleted</string>
-    <string name="open_navigation">Open Navigation Drawer</string>
-    <string name="close_navigation">Close Navigation Drawer</string>
+    <string name="open_navigation">Open Navigation</string>
+    <string name="close_navigation">Close Navigation</string>
 
-    <!-- Custom App Bar. -->
-    <string name="favorite_icon">Favorite Icon</string>
+    <!-- URL bar -->
+    <string name="favorite_icon">Site icon</string>
+    <string name="url_hint">Search or enter address</string>
 
-    <!-- Navigation Drawer. -->
-    <string name="navigation_drawer">Navigation Drawer</string>
-    <string name="navigation">Navigation</string>
-    <string name="home">Home</string>
-    <string name="back">Back</string>
-    <string name="forward">Forward</string>
-    <string name="downloads">Downloads</string>
-    <string name="guide">Guide</string>
-    <string name="settings">Settings</string>
-    <string name="about">About</string>
-    <string name="clear_and_exit">Clear and Exit</string>
+    <!-- Bottom toolbar -->
+    <string name="btn_back">Back</string>
+    <string name="btn_forward">Forward</string>
+    <string name="btn_home">Home</string>
+    <string name="btn_tabs">Tabs</string>
+    <string name="btn_menu">Menu</string>
+    <string name="tab_count_badge">%d tabs open</string>
 
-    <!-- Options Menu. -->
+    <!-- Floating menu grid actions -->
+    <string name="menu_share">Share</string>
+    <string name="menu_user_agent">User agent</string>
+    <string name="menu_desktop_site">Desktop site</string>
+    <string name="menu_translate">Translate</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_add_bookmark">Add bookmark</string>
+    <string name="menu_customize_menu">Customize menu</string>
+    <string name="menu_view_source">View source</string>
+    <string name="menu_clear_data">Clear data</string>
+    <string name="menu_night_mode">Night mode</string>
+    <string name="menu_ad_blocking">Ad blocking</string>
+    <string name="menu_reader_mode">Reader mode</string>
+    <string name="menu_add_to_home_screen">Add to Home Screen</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="menu_find_in_page">Find in page</string>
+    <string name="menu_full_screen">Full screen</string>
+    <string name="menu_javascript">JavaScript</string>
+    <string name="menu_bookmarks">Bookmarks</string>
+    <string name="menu_history">History</string>
+    <string name="menu_downloads">Downloads</string>
+
+    <!-- Long-press button action labels -->
+    <string name="action_bookmarks">Bookmarks</string>
+    <string name="action_reader_mode">Reader mode</string>
+    <string name="action_downloads">Downloads</string>
+    <string name="action_incognito">Incognito</string>
+    <string name="action_copy_url">Copy URL</string>
+    <string name="action_share">Share</string>
+    <string name="action_desktop_mode">Desktop mode</string>
+    <string name="action_find_in_page">Find in page</string>
+    <string name="action_toggle_ai">Toggle AI dot</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_none">None</string>
+
+    <!-- Options Menu (overflow) -->
     <string name="javascript">JavaScript</string>
     <string name="first_party_cookies">First-Party Cookies</string>
     <string name="third_party_cookies">Third-Party Cookies</string>
@@ -59,53 +92,47 @@
     <string name="add_to_home_screen">Add to Home Screen</string>
     <string name="refresh">Refresh</string>
 
-    <!-- Create Home Screen Shortcut Alert Dialog. -->
+    <!-- Create Home Screen Shortcut dialog -->
     <string name="shortcut_name">Shortcut name</string>
     <string name="cancel">Cancel</string>
     <string name="create">Create</string>
 
-    <!-- Preferences. -->
+    <!-- Preferences -->
     <string name="privacy">Privacy</string>
     <string name="javascript_preference">Enable JavaScript by default</string>
     <string name="javascript_preference_summary">JavaScript allows websites to run programs (scripts) on your device.</string>
     <string name="first_party_cookies_preference">Enable first-party cookies by default</string>
     <string name="first_party_cookies_preference_summary">Cookies allow websites to store information on your device.
-        First-party cookies come from the server listed in the address bar.
-        Devices with versions of Android older than Lollipop (version 5.0) will also enable third-party cookies with this setting.</string>
+        First-party cookies come from the server listed in the address bar.</string>
     <string name="third_party_cookies_preference">Enable third-party cookies by default</string>
-    <string name="third_party_cookies_summary">Third-party cookies allow parts of websites that aren\'t the main website, like advertisements, to store information on your device.
-        This setting requires Android Lollipop (version 5.0) or higher.  This setting has no effect if first-party cookies are disabled.</string>
+    <string name="third_party_cookies_summary">Third-party cookies allow parts of websites that aren\'t the main website,
+        like advertisements, to store information on your device.
+        This setting requires Android Lollipop (version 5.0) or higher.</string>
     <string name="dom_storage_preference">Enable DOM storage by default</string>
-    <string name="dom_storage_preference_summary">Document Object Management storage, also called web storage, is an enhanced form of cookies
-        that allows websites to store larger and more complex types of information, like pictures, on your device.</string>
+    <string name="dom_storage_preference_summary">Document Object Management storage, also called web storage, is an enhanced
+        form of cookies that allows websites to store larger and more complex types of information on your device.</string>
     <string name="user_agent">User agent</string>
     <string-array name="user_agent_entries">
         <item>WebView Default</item>
-        <item>Privacy Browser 1.0</item>
-        <item>Firefox 46 on Android 6.0.1</item>
-        <item>Chrome 50 on Android 6.0.1</item>
-        <item>Firefox 46 on Linux</item>
-        <item>Chromium 50 on Linux</item>
-        <item>Konqueror 4.14 on Linux</item>
-        <item>Firefox 46 on Windows 10</item>
-        <item>Chrome 50 on Windows 10</item>
-        <item>Internet Explorer 11 on Windows 10</item>
-        <item>Edge 13 on Windows 10</item>
+        <item>Vion Browser 1.0</item>
+        <item>Firefox on Android</item>
+        <item>Chrome on Android</item>
+        <item>Firefox on Linux</item>
+        <item>Chromium on Linux</item>
+        <item>Firefox on Windows</item>
+        <item>Chrome on Windows</item>
         <item>Custom</item>
     </string-array>
-    <string-array name="user_agent_entry_values">  <!-- None of the items in this string-array should be translated. -->
-        <item>Default user agent</item>  <!-- This item must not be translated into other languages because it is referenced in code.  It is never displayed on the screen. -->
-        <item>PrivacyBrowser/1.0</item>
-        <item>Mozilla/5.0 (Android 6.0.1; Mobile; rv:46.0) Gecko/46.0 Firefox/46.0</item>
-        <item>Mozilla/5.0 (Linux; Android 6.0.1; Nexus 6P Build/MHC19Q) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.89 Mobile Safari/537.36</item>
-        <item>Mozilla/5.0 (X11; Linux x86_64; rv:46.0) Gecko/20100101 Firefox/46.0</item>
-        <item>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36</item>
-        <item>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.21 (KHTML, like Gecko) konqueror/4.14.14 Safari/537.21</item>
-        <item>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0</item>
-        <item>Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36</item>
-        <item>Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko</item>
-        <item>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586</item>
-        <item>Custom user agent</item>  <!-- This item must not be translated into other languages because it is referenced in code.  It is never displayed on the screen. -->
+    <string-array name="user_agent_entry_values">
+        <item>Default user agent</item>
+        <item>VionBrowser/1.0</item>
+        <item>Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/109.0 Firefox/109.0</item>
+        <item>Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36</item>
+        <item>Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/109.0</item>
+        <item>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36</item>
+        <item>Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/109.0</item>
+        <item>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36</item>
+        <item>Custom user agent</item>
     </string-array>
     <string name="custom_user_agent">Custom user agent</string>
     <string name="search">Search</string>
@@ -114,15 +141,15 @@
         <item>DuckDuckGo</item>
         <item>Google</item>
         <item>Bing</item>
-        <item>Yahoo</item>
+        <item>Brave Search</item>
         <item>Custom</item>
     </string-array>
-    <string-array name="javascript_disabled_search_entry_values">  <!-- None of the items in this string-array should be translated. -->
+    <string-array name="javascript_disabled_search_entry_values">
         <item>https://duckduckgo.com/html/?q=</item>
         <item>https://www.google.com/search?q=</item>
         <item>https://www.bing.com/search?q=</item>
-        <item>https://search.yahoo.com/mobile/s?nojs=1&amp;p=</item>
-        <item>Custom URL</item>  <!-- This item must not be translated into other languages because it is referenced in code.  It is never displayed on the screen. -->
+        <item>https://search.brave.com/search?q=</item>
+        <item>Custom URL</item>
     </string-array>
     <string name="javascript_disabled_search_custom_url">JavaScript-disabled search custom URL</string>
     <string name="javascript_enabled_search">JavaScript-enabled search</string>
@@ -130,15 +157,15 @@
         <item>DuckDuckGo</item>
         <item>Google</item>
         <item>Bing</item>
-        <item>Yahoo</item>
+        <item>Brave Search</item>
         <item>Custom</item>
     </string-array>
-    <string-array name="javascript_enabled_search_entry_values">  <!-- None of the items in this string-array should be translated. -->
+    <string-array name="javascript_enabled_search_entry_values">
         <item>https://duckduckgo.com/?q=</item>
         <item>https://www.google.com/search?q=</item>
         <item>https://www.bing.com/search?q=</item>
-        <item>https://search.yahoo.com/mobile/s?p=</item>
-        <item>Custom URL</item>  <!-- This item must not be translated into other languages because it is referenced in code.  It is never displayed on the screen. -->
+        <item>https://search.brave.com/search?q=</item>
+        <item>Custom URL</item>
     </string-array>
     <string name="javascript_enabled_search_custom_url">JavaScript-enabled search custom URL</string>
     <string name="custom_url">Custom URL</string>
@@ -147,32 +174,211 @@
     <string name="swipe_to_refresh_enabled">Swipe to refresh</string>
     <string name="swipe_to_refresh_enabled_summary">Some websites don\'t work well if swipe to refresh is enabled.</string>
 
-    <!-- About Activity. -->
-    <string name="about_privacy_browser">About Privacy Browser</string>
+    <!-- Bottom toolbar long-press settings -->
+    <string name="toolbar_button_actions">Toolbar Button Actions</string>
+    <string name="back_button_long_press">Back button long-press action</string>
+    <string name="forward_button_long_press">Forward button long-press action</string>
+    <string name="home_button_long_press">Home button long-press action</string>
+    <string name="tabs_button_long_press">Tabs button long-press action</string>
+    <string name="menu_button_long_press">Menu button long-press action</string>
+    <string-array name="long_press_action_entries">
+        <item>None</item>
+        <item>Bookmarks</item>
+        <item>Reader mode</item>
+        <item>Downloads</item>
+        <item>Copy URL</item>
+        <item>Share</item>
+        <item>Desktop mode</item>
+        <item>Find in page</item>
+        <item>Toggle AI dot</item>
+        <item>Settings</item>
+    </string-array>
+    <string-array name="long_press_action_values">
+        <item>none</item>
+        <item>bookmarks</item>
+        <item>reader_mode</item>
+        <item>downloads</item>
+        <item>copy_url</item>
+        <item>share</item>
+        <item>desktop_mode</item>
+        <item>find_in_page</item>
+        <item>toggle_ai</item>
+        <item>settings</item>
+    </string-array>
+
+    <!-- About screen -->
+    <string name="about_vion">About Vion Browser</string>
     <string name="version">Version</string>
-        <string name="version_code">version code</string>
-        <string name="hardware">Hardware</string>
-            <!-- Blank spaces at the end of strings are stripped out, so you have to replace them with the Unicode literal \u00A0. -->
-            <string name="brand">Brand:\u00A0</string>
-            <string name="manufacturer">Manufacturer:\u00A0</string>
-            <string name="model">Model:\u00A0</string>
-            <string name="device">Device:\u00A0</string>
-            <string name="bootloader">Bootloader:\u00A0</string>
-            <string name="radio">Radio:\u00A0</string>
-        <string name="software">Software</string>
-            <string name="android">Android:\u00A0</string>
-            <string name="api">API</string>
-            <string name="build">Build:\u00A0</string>
-            <string name="security_patch">Security Patch:\u00A0</string>
-            <string name="webkit">WebKit:\u00A0</string>
-            <string name="chrome">Chrome:\u00A0</string>
+    <string name="version_code">version code</string>
+    <string name="hardware">Hardware</string>
+    <string name="brand">Brand:\u00A0</string>
+    <string name="manufacturer">Manufacturer:\u00A0</string>
+    <string name="model">Model:\u00A0</string>
+    <string name="device">Device:\u00A0</string>
+    <string name="bootloader">Bootloader:\u00A0</string>
+    <string name="radio">Radio:\u00A0</string>
+    <string name="software">Software</string>
+    <string name="android_version">Android:\u00A0</string>
+    <string name="api">API</string>
+    <string name="build">Build:\u00A0</string>
+    <string name="security_patch">Security Patch:\u00A0</string>
+    <string name="webkit">WebKit:\u00A0</string>
+    <string name="chrome">Chrome:\u00A0</string>
     <string name="permissions">Permissions</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="changelog">Changelog</string>
     <string name="license">License</string>
     <string name="contributors">Contributors</string>
     <string name="links">Links</string>
+    <string name="settings">Settings</string>
 
-    <!-- Ad Control. -->
-    <string name="ad_id">Null</string>  <!-- There are no ads in the standard flavor, but this string must exist because it is referenced in the code. -->
+    <!-- Share dialog -->
+    <string name="share_url">Share URL</string>
+
+    <!-- Tab manager -->
+    <string name="new_tab">New tab</string>
+    <string name="close_tab">Close tab</string>
+    <string name="close_all_tabs">Close all tabs</string>
+    <string name="close_other_tabs">Close other tabs</string>
+    <string name="duplicate_tab">Duplicate tab</string>
+    <string name="copy_link">Copy link</string>
+    <string name="refresh_all">Refresh all</string>
+
+    <!-- Find in page -->
+    <string name="find_in_page">Find in page</string>
+    <string name="find_hint">Search on page…</string>
+    <string name="find_previous">Previous</string>
+    <string name="find_next">Next</string>
+    <string name="find_done">Done</string>
+
+    <!-- Error / status -->
+    <string name="url_copied">URL copied</string>
+    <string name="no_page_loaded">No page loaded</string>
+    <string name="loading">Loading…</string>
+
+    <!-- Phase 5 — Homepage -->
+    <string name="home_tagline">Private. Lightweight. Yours.</string>
+    <string name="add_shortcut">Add shortcut</string>
+    <string name="shortcut_added">Shortcut added</string>
+
+    <!-- Phase 6 — Unified Panel -->
+    <string name="panel_bookmarks">Bookmarks</string>
+    <string name="panel_history">History</string>
+    <string name="panel_saved">Saved</string>
+    <string name="panel_downloads">Downloads</string>
+    <string name="no_bookmarks">No bookmarks yet</string>
+    <string name="no_history">No history yet</string>
+    <string name="no_saved_pages">No saved pages yet</string>
+    <string name="no_downloads">No downloads yet</string>
+    <string name="bookmark_added">Bookmark added</string>
+    <string name="delete">Delete</string>
+    <string name="delete_history_entry">Delete history entry?</string>
+    <string name="delete_saved_page">Delete saved page?</string>
+    <string name="clear_history_confirm">Clear all history?</string>
+    <string name="clear">Clear</string>
+    <string name="pin_to_home">Pin to home</string>
+    <string name="clear_data_confirm">Clear cookies, cache and history?</string>
+
+    <!-- Phase 8 — Security settings -->
+    <string name="security">Security</string>
+    <string name="fingerprint_resistance">Fingerprint resistance</string>
+    <string name="fingerprint_resistance_summary">Adds noise to Canvas API and normalises hardware concurrency to reduce browser fingerprinting.</string>
+    <string name="page_visibility_spoof">Page Visibility spoofing</string>
+    <string name="page_visibility_spoof_summary">Always reports the document as visible so pages cannot detect they are in a background tab.</string>
+    <string name="strip_tracking_params">Strip tracking parameters</string>
+    <string name="strip_tracking_params_summary">Removes UTM, fbclid, gclid and other tracking query parameters from URLs before loading.</string>
+    <string name="https_only_mode">HTTPS-only mode</string>
+    <string name="https_only_mode_summary">Warns you before loading non-HTTPS pages.</string>
+    <string name="webrtc_mode">WebRTC policy</string>
+    <string-array name="webrtc_mode_entries">
+        <item>Disabled (most private)</item>
+        <item>Block non-proxied UDP</item>
+        <item>Allowed</item>
+    </string-array>
+    <string-array name="webrtc_mode_values">
+        <item>disable</item>
+        <item>block_non_proxied</item>
+        <item>allow</item>
+    </string-array>
+    <string name="doh_enabled">DNS over HTTPS (DoH)</string>
+    <string name="doh_enabled_summary">Route DNS queries through an encrypted HTTPS channel.</string>
+    <string name="doh_provider">DoH provider</string>
+    <string-array name="doh_provider_entries">
+        <item>Cloudflare (1.1.1.1)</item>
+        <item>Google (8.8.8.8)</item>
+        <item>Quad9 (9.9.9.9)</item>
+        <item>AdGuard DNS</item>
+        <item>Mullvad DNS</item>
+        <item>System default</item>
+    </string-array>
+    <string-array name="doh_provider_values">
+        <item>https://cloudflare-dns.com/dns-query</item>
+        <item>https://dns.google/dns-query</item>
+        <item>https://dns.quad9.net/dns-query</item>
+        <item>https://dns.adguard-dns.com/dns-query</item>
+        <item>https://doh.mullvad.net/dns-query</item>
+        <item></item>
+    </string-array>
+
+
+    <!-- Phase 9 — Reader mode / Night mode / Auto-scroll -->
+    <string name="reader_mode_enabled">Reader mode on</string>
+    <string name="reader_mode_disabled">Reader mode off</string>
+    <string name="night_mode_enabled">Night mode on</string>
+    <string name="night_mode_disabled">Night mode off</string>
+    <string name="auto_scroll">Auto-scroll</string>
+    <string name="auto_scroll_started">Auto-scroll started</string>
+    <string name="auto_scroll_stopped">Auto-scroll stopped</string>
+    <string name="reader_mode_failed">Could not extract article</string>
+
+    <!-- Phase 10 — AI Assistant -->
+    <string name="ai_assistant">AI Assistant</string>
+    <string name="ai_hint">Ask about this page…</string>
+    <string name="ai_send">Send</string>
+    <string name="ai_clear">Clear chat</string>
+    <string name="ai_provider">AI provider</string>
+    <string name="ai_api_key">API key</string>
+    <string name="ai_no_key">No API key set. Tap ⚙ to configure.</string>
+    <string name="ai_error_prefix">Error: </string>
+    <string name="ai_empty_hint">Ask anything about the current page.</string>
+    <string name="ai_summarize">Summarise this page</string>
+    <string name="ai_translate_page">Translate this page</string>
+    <string name="ai_settings">AI settings</string>
+    <string name="ai_provider_gemini">Gemini (Google)</string>
+    <string name="ai_provider_openai">OpenAI (GPT)</string>
+    <string name="ai_provider_anthropic">Anthropic (Claude)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_ollama">Ollama (local)</string>
+
+    <!-- Phase 11 — Ad blocking / User scripts -->
+    <string name="adblock_enabled">Ad blocking on</string>
+    <string name="adblock_disabled">Ad blocking off</string>
+    <string name="adblock_title">Ad blocking</string>
+    <string name="user_scripts">User scripts</string>
+    <string name="user_scripts_none">No user scripts installed.</string>
+    <string name="script_enabled">Script enabled</string>
+    <string name="script_disabled">Script disabled</string>
+
+    <!-- Phase 12 — General -->
+    <string name="share_page">Share page</string>
+    <string name="print_page">Print page</string>
+    <string name="save_page">Save page offline</string>
+    <string name="open_in_browser">Open in external browser</string>
+
+    <!-- Phase 13 — UserScript manager -->
+    <string name="add_script">Add script</string>
+    <string name="edit_script">Edit script</string>
+    <string name="save">Save</string>
+    <string name="script_name">Script name</string>
+    <string name="script_name_hint">e.g. Dark mode override</string>
+    <string name="script_description">Description (optional)</string>
+    <string name="script_description_hint">What does this script do?</string>
+    <string name="script_match_pattern">Match pattern (URL)</string>
+    <string name="script_match_hint">e.g. *://example.com/*</string>
+    <string name="script_run_at">Run at</string>
+    <string name="script_code">JavaScript code</string>
+    <string name="script_code_hint">// Your JavaScript here…</string>
+    <string name="delete_script_confirm">Delete \"%s\"?</string>
+    <string name="scripts_count">%d scripts</string>
+
 </resources>

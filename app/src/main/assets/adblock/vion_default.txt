@@ -1,0 +1,50 @@
+! Vion Browser — Default Ad/Tracker Block List
+! Format: one domain or URL fragment per line
+! Lines starting with ! are comments. @@ prefix = allowlist.
+! ── Analytics ──────────────────────────────────────────────────
+google-analytics.com
+analytics.google.com
+googletagmanager.com
+googletagservices.com
+doubleclick.net
+googlesyndication.com
+adservice.google.com
+pagead2.googlesyndication.com
+! ── Facebook / Meta tracking ───────────────────────────────────
+connect.facebook.net
+facebook.com/tr
+pixel.facebook.com
+! ── Common ad networks ─────────────────────────────────────────
+ads.twitter.com
+static.ads-twitter.com
+ad.doubleclick.net
+acdn.adnxs.com
+ib.adnxs.com
+ads.pubmatic.com
+ads.rubiconproject.com
+pixel.adsafeprotected.com
+adsymptotic.com
+! ── Trackers ──────────────────────────────────────────────────
+scorecardresearch.com
+quantserve.com
+beacon.krxd.net
+cdn.krxd.net
+cdns.gigya.com
+bat.bing.com
+c.bing.com
+mc.yandex.ru
+mc.yandex.com
+! ── Amazon ads ────────────────────────────────────────────────
+aax.amazon-adsystem.com
+fls-na.amazon.com
+fls-eu.amazon.com
+s.amazon-adsystem.com
+! ── Outbrain / Taboola ────────────────────────────────────────
+widgets.outbrain.com
+trc.taboola.com
+cdn.taboola.com
+! ── Misc trackers ─────────────────────────────────────────────
+cdn.segment.com
+api.segment.io
+t.co/i/
+platform.twitter.com/oct.js

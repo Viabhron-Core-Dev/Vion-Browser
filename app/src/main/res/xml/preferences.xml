@@ -1,27 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  Copyright 2016 Soren Stoutner <soren@stoutner.com>.
+  Copyright 2015-2016 Soren Stoutner <soren@stoutner.com>.
+  Copyright 2026 Vion Browser Contributors.
 
-  This file is part of Privacy Browser <https://www.stoutner.com/privacy-browser>.
-
-  Privacy Browser is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
-
-  Privacy Browser is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with Privacy Browser.  If not, see <http://www.gnu.org/licenses/>. -->
+  This file is part of Vion Browser (GPL v3). -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
     <PreferenceCategory
         android:key="privacy"
-        android:title="@string/privacy" >
+        android:title="@string/privacy">
 
         <SwitchPreference
             android:key="javascript_enabled"
@@ -54,12 +43,10 @@
             android:entryValues="@array/user_agent_entry_values"
             android:defaultValue="Default user agent" />
 
-        <!-- android:inputType="textVisiblePassword" sets the keyboard to have a dedicated number row.
-          android:imeOptions="flagNoExtractUi" is not set because with the dedicated number row there often isn't room to see the EditText in landscape orientation. -->
         <EditTextPreference
             android:key="custom_user_agent"
             android:title="@string/custom_user_agent"
-            android:defaultValue="PrivacyBrowser/1.0"
+            android:defaultValue="VionBrowser/1.0"
             android:inputType="textVisiblePassword|textMultiLine" />
 
     </PreferenceCategory>
@@ -75,9 +62,6 @@
             android:entryValues="@array/javascript_disabled_search_entry_values"
             android:defaultValue="https://duckduckgo.com/html/?q=" />
 
-        <!-- android:imeOptions="flagNoExtractUi" is not set because with the the length of the title of the dialog box
-          there often isn't enough space to see the EditText in landscape orientation.
-          android:singleLine="true" is not specified because it is the EditTextPreference default. -->
         <EditTextPreference
             android:key="javascript_disabled_search_custom_url"
             android:title="@string/javascript_disabled_search_custom_url"
@@ -91,26 +75,22 @@
             android:entryValues="@array/javascript_enabled_search_entry_values"
             android:defaultValue="https://duckduckgo.com/?q=" />
 
-        <!-- android:imeOptions="flagNoExtractUi" is not set because with the the length of the title of the dialog box
-          there often isn't enough space to see the EditText in landscape orientation.
-          android:singleLine="true" is not specified because it is the EditTextPreference default. -->
         <EditTextPreference
             android:key="javascript_enabled_search_custom_url"
             android:title="@string/javascript_enabled_search_custom_url"
             android:defaultValue=""
             android:inputType="textUri" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="general"
-        android:title="@string/general" >
+        android:title="@string/general">
 
-        <!-- android:imeOptions="flagNoExtractUi" is not set because in special character mode there often isn't enough space to see the EditText in landscape orientation.
-          android:singleLine="true" is not specified because it is the EditTextPreference default. -->
         <EditTextPreference
             android:key="homepage"
             android:title="@string/homepage_preference"
-            android:defaultValue="https://www.duckduckgo.com"
+            android:defaultValue="https://duckduckgo.com"
             android:inputType="textUri" />
 
         <SwitchPreference
@@ -118,5 +98,100 @@
             android:title="@string/swipe_to_refresh_enabled"
             android:summary="@string/swipe_to_refresh_enabled_summary"
             android:defaultValue="true" />
+
     </PreferenceCategory>
+
+    <!-- Phase 8 — Security additions -->
+    <PreferenceCategory
+        android:key="security"
+        android:title="@string/security">
+
+        <SwitchPreference
+            android:key="fingerprint_resistance"
+            android:title="@string/fingerprint_resistance"
+            android:summary="@string/fingerprint_resistance_summary"
+            android:defaultValue="true" />
+
+        <SwitchPreference
+            android:key="page_visibility_spoof"
+            android:title="@string/page_visibility_spoof"
+            android:summary="@string/page_visibility_spoof_summary"
+            android:defaultValue="true" />
+
+        <SwitchPreference
+            android:key="strip_tracking_params"
+            android:title="@string/strip_tracking_params"
+            android:summary="@string/strip_tracking_params_summary"
+            android:defaultValue="true" />
+
+        <SwitchPreference
+            android:key="https_only_mode"
+            android:title="@string/https_only_mode"
+            android:summary="@string/https_only_mode_summary"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="webrtc_mode"
+            android:title="@string/webrtc_mode"
+            android:entries="@array/webrtc_mode_entries"
+            android:entryValues="@array/webrtc_mode_values"
+            android:defaultValue="disable" />
+
+        <SwitchPreference
+            android:key="doh_enabled"
+            android:title="@string/doh_enabled"
+            android:summary="@string/doh_enabled_summary"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="doh_provider"
+            android:title="@string/doh_provider"
+            android:entries="@array/doh_provider_entries"
+            android:entryValues="@array/doh_provider_values"
+            android:defaultValue="https://cloudflare-dns.com/dns-query"
+            android:dependency="doh_enabled" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="toolbar_button_actions"
+        android:title="@string/toolbar_button_actions">
+
+        <ListPreference
+            android:key="back_button_long_press"
+            android:title="@string/back_button_long_press"
+            android:entries="@array/long_press_action_entries"
+            android:entryValues="@array/long_press_action_values"
+            android:defaultValue="none" />
+
+        <ListPreference
+            android:key="forward_button_long_press"
+            android:title="@string/forward_button_long_press"
+            android:entries="@array/long_press_action_entries"
+            android:entryValues="@array/long_press_action_values"
+            android:defaultValue="none" />
+
+        <ListPreference
+            android:key="home_button_long_press"
+            android:title="@string/home_button_long_press"
+            android:entries="@array/long_press_action_entries"
+            android:entryValues="@array/long_press_action_values"
+            android:defaultValue="none" />
+
+        <ListPreference
+            android:key="tabs_button_long_press"
+            android:title="@string/tabs_button_long_press"
+            android:entries="@array/long_press_action_entries"
+            android:entryValues="@array/long_press_action_values"
+            android:defaultValue="none" />
+
+        <ListPreference
+            android:key="menu_button_long_press"
+            android:title="@string/menu_button_long_press"
+            android:entries="@array/long_press_action_entries"
+            android:entryValues="@array/long_press_action_values"
+            android:defaultValue="none" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="bottom_toolbar_height">56dp</dimen>
+    <dimen name="bottom_toolbar_icon_size">24dp</dimen>
+    <dimen name="bottom_toolbar_icon_padding">12dp</dimen>
+    <dimen name="url_bar_height">48dp</dimen>
+    <dimen name="url_bar_corner_radius">24dp</dimen>
+    <dimen name="url_bar_margin">8dp</dimen>
+    <dimen name="floating_menu_width">220dp</dimen>
+    <dimen name="floating_menu_corner_radius">16dp</dimen>
+    <dimen name="floating_menu_item_size">80dp</dimen>
+    <dimen name="floating_menu_icon_size">28dp</dimen>
+    <dimen name="floating_menu_padding">8dp</dimen>
+    <dimen name="tab_badge_size">18dp</dimen>
+    <dimen name="tab_badge_text_size">10sp</dimen>
+    <dimen name="progress_bar_height">2dp</dimen>
+    <dimen name="fab_elevation">6dp</dimen>
 </resources>
