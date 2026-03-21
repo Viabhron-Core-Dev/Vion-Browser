@@ -1,50 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!--
-  Copyright 2015-2016 Soren Stoutner <soren@stoutner.com>.
-
-  This file is part of Privacy Browser <https://www.stoutner.com/privacy-browser>.
-
-  Privacy Browser is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
-
-  Privacy Browser is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with Privacy Browser.  If not, see <http://www.gnu.org/licenses/>. -->
-
 <resources>
-
-    <style name="PrivacyBrowser" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorAccent">@color/blue</item>
+    <!-- AppCompat / Material base theme -->
+    <style name="VionBrowser" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/vion_primary</item>
+        <item name="colorPrimaryDark">@color/vion_primary_dark</item>
+        <item name="colorAccent">@color/vion_accent</item>
+        <item name="android:windowBackground">@color/vion_primary_dark</item>
+        <item name="android:statusBarColor">@color/vion_primary_dark</item>
+        <item name="android:navigationBarColor">@color/bottom_bar_background</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
     </style>
 
-    <!-- The default actionBarSize is 56dp.  53dp is the smallest that doesn't cause the urlTextBox to scroll vertically with a font size of Huge. -->
-    <style name="PrivacyBrowser.MainWebView">
-        <item name="android:actionBarSize">53dp</item>
+    <style name="VionBrowser.MainWebView" parent="VionBrowser">
+        <item name="android:windowTranslucentStatus">false</item>
     </style>
 
-    <style name="PrivacyBrowser.About">
-        <item name="colorPrimaryDark">@color/blue</item>
+    <style name="VionBrowser.Settings" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/vion_primary</item>
+        <item name="colorPrimaryDark">@color/vion_primary_dark</item>
+        <item name="colorAccent">@color/vion_accent</item>
+        <item name="android:windowBackground">@color/vion_primary_dark</item>
     </style>
 
-    <!-- colorPrimaryDark is the color of the status bar. -->
-    <style name="PrivacyBrowser.Settings" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/blue</item>
-        <item name="colorPrimaryDark">@color/dark_blue</item>
-        <item name="colorAccent">@color/blue</item>
+    <style name="VionBrowser.About" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/vion_primary</item>
+        <item name="colorPrimaryDark">@color/vion_primary_dark</item>
+        <item name="colorAccent">@color/vion_accent</item>
+        <item name="android:windowBackground">@color/vion_primary_dark</item>
     </style>
 
-    <!-- ThemeOverlay.AppCompat.Dark.ActionBar" makes the text and the icons in the AppBar white. -->
-    <style name="PrivacyBrowser.DarkAppBar" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <!-- Popup / overflow menu -->
+    <style name="VionBrowser.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
 
-    <style name="PrivacyBrowser.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar" />
+    <!-- AppBar overlay -->
+    <style name="VionBrowser.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="PrivacyBrowser.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <!-- Floating menu item text -->
+    <style name="FloatingMenuItemText">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:gravity">center</item>
+    </style>
 
+    <!-- URL bar EditText -->
+    <style name="UrlBarEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/url_text</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- Full-height BottomSheetDialog (for Unified Panel — Phase 6) -->
+    <style name="FullHeightBottomSheet" parent="Theme.Design.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="bottomSheetStyle">@style/FullHeightBottomSheetStyle</item>
+    </style>
+
+    <style name="FullHeightBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@color/vion_primary_dark</item>
+        <item name="behavior_peekHeight">600dp</item>
+        <item name="behavior_hideable">true</item>
+        <item name="behavior_skipCollapsed">true</item>
+    </style>
+
+    <!-- Floating menu item icon background (used by shortcut item) -->
+    <style name="FloatingMenuItemBg">
+        <item name="android:background">@drawable/floating_menu_item_bg</item>
+    </style>
 </resources>

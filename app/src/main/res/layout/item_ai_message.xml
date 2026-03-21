@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  item_ai_message.xml — A single chat bubble in the AI assistant panel.
+  The adapter sets ai_bubble_bg tint and alignment based on role (user/assistant).
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ai_message_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
+
+    <!-- Avatar dot (colored per role) -->
+    <View
+        android:id="@+id/ai_avatar_dot"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/tab_badge_background" />
+
+    <!-- Message bubble -->
+    <TextView
+        android:id="@+id/ai_message_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="280dp"
+        android:background="@drawable/floating_menu_background"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:textColor="#E8E8FF"
+        android:textSize="14sp"
+        android:lineSpacingMultiplier="1.4"
+        android:textIsSelectable="true" />
+</LinearLayout>

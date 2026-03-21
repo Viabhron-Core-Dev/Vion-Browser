@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  dialog_edit_user_script.xml — Add / Edit a user script dialog.
+  Binding class: DialogEditUserScriptBinding
+-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/script_name"
+            android:textColor="#9D97FF"
+            android:textSize="12sp"
+            android:layout_marginBottom="2dp" />
+        <EditText
+            android:id="@+id/edit_script_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/script_name_hint"
+            android:inputType="text"
+            android:singleLine="true"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Description -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/script_description"
+            android:textColor="#9D97FF"
+            android:textSize="12sp"
+            android:layout_marginBottom="2dp" />
+        <EditText
+            android:id="@+id/edit_script_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/script_description_hint"
+            android:inputType="text"
+            android:singleLine="true"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Match pattern -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/script_match_pattern"
+            android:textColor="#9D97FF"
+            android:textSize="12sp"
+            android:layout_marginBottom="2dp" />
+        <EditText
+            android:id="@+id/edit_match_pattern"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/script_match_hint"
+            android:inputType="textUri"
+            android:singleLine="true"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Run at -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/script_run_at"
+            android:textColor="#9D97FF"
+            android:textSize="12sp"
+            android:layout_marginBottom="2dp" />
+        <Spinner
+            android:id="@+id/spinner_run_at"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp" />
+
+        <!-- JS code -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/script_code"
+            android:textColor="#9D97FF"
+            android:textSize="12sp"
+            android:layout_marginBottom="2dp" />
+        <EditText
+            android:id="@+id/edit_script_code"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:hint="@string/script_code_hint"
+            android:inputType="textMultiLine"
+            android:gravity="top|start"
+            android:fontFamily="monospace"
+            android:textSize="13sp"
+            android:scrollbars="vertical" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,37 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!--
-  Copyright 2016 Soren Stoutner <soren@stoutner.com>.
-
-  This file is part of Privacy Browser <https://www.stoutner.com/privacy-browser>.
-
-  Privacy Browser is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
-
-  Privacy Browser is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with Privacy Browser.  If not, see <http://www.gnu.org/licenses/>. -->
-
 <resources>
-    <!-- The default actionBarSize is 56dp.  53dp is the smallest that doesn't cause the urlTextBox to scroll vertically with a font size of Huge.
-      android:windowTranslucentStatus requires API >= 19.  It makes the system status bar transparent.
-      When it is specified the root layout should include android:fitsSystemWindows="true". -->
-    <style name="PrivacyBrowser.MainWebView">
-        <item name="android:actionBarSize">53dp</item>
-        <item name="android:windowTranslucentStatus">true</item>
-    </style>
-
-    <!-- android:windowTranslucentStatus requires API >= 19.  It makes the system status bar transparent.
-      When it is specified the root layout should include android:fitsSystemWindows="true".
-      colorPrimaryDark goes behind the status bar, which is then darkened by the overlay. -->
-    <style name="PrivacyBrowser.About">
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="colorPrimaryDark">@color/blue</item>
+    <!-- On API 19+ we can use translucent status bar. -->
+    <style name="VionBrowser" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/vion_primary</item>
+        <item name="colorPrimaryDark">@color/vion_primary_dark</item>
+        <item name="colorAccent">@color/vion_accent</item>
+        <item name="android:windowBackground">@color/vion_primary_dark</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
     </style>
 </resources>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  fragment_ai_panel.xml — Phase 10 AI Assistant panel (OPEN state).
+  Hosted inside a full-height BottomSheetDialog.
+  View-binding IDs must match AiPanelFragment.kt exactly.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1A1A2E">
+
+    <!-- Header bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="8dp"
+        android:background="#16213E">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_ai"
+            android:tint="#9D97FF" />
+
+        <TextView
+            android:id="@+id/ai_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ai_assistant"
+            android:textColor="#E8E8FF"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium"
+            android:paddingStart="10dp" />
+
+        <!-- Summarise shortcut -->
+        <ImageButton
+            android:id="@+id/btn_ai_summarize"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_sort_by_size"
+            android:tint="#9D97FF"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/ai_summarize" />
+
+        <!-- Settings / provider picker -->
+        <ImageButton
+            android:id="@+id/btn_ai_settings"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_menu_settings"
+            android:tint="#9D97FF"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/ai_settings" />
+
+        <!-- Clear chat -->
+        <ImageButton
+            android:id="@+id/btn_ai_clear"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_menu_clear"
+            android:tint="#9D97FF"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/ai_clear" />
+    </LinearLayout>
+
+    <!-- Progress bar (visible while waiting for response) -->
+    <ProgressBar
+        android:id="@+id/ai_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:indeterminate="true"
+        android:indeterminateTint="#6C63FF"
+        android:visibility="gone" />
+
+    <!-- Chat message list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ai_chat_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp" />
+
+    <!-- Empty state hint -->
+    <TextView
+        android:id="@+id/ai_empty_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ai_empty_hint"
+        android:textColor="#707088"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:padding="32dp"
+        android:visibility="visible" />
+
+    <!-- Input area -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#16213E"
+        android:paddingStart="12dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/ai_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/ai_hint"
+            android:textColor="#E8E8FF"
+            android:textColorHint="#606070"
+            android:background="@drawable/url_bar_background"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="14sp"
+            android:maxLines="4"
+            android:inputType="textMultiLine|textCapSentences"
+            android:imeOptions="actionSend" />
+
+        <ImageButton
+            android:id="@+id/btn_send"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:src="@android:drawable/ic_menu_send"
+            android:tint="#6C63FF"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/ai_send" />
+    </LinearLayout>
+</LinearLayout>

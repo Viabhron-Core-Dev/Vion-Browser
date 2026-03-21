@@ -1,31 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!--
-  Copyright 2016 Soren Stoutner <soren@stoutner.com>.
-
-  This file is part of Privacy Browser <https://www.stoutner.com/privacy-browser>.
-
-  Privacy Browser is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
-
-  Privacy Browser is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with Privacy Browser.  If not, see <http://www.gnu.org/licenses/>. -->
-
-<!-- These color resources are hardcoded for vector drawables.  Once the minimum API is >= 22 we can remove the hardcoded colors and reference these entries. -->
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="blue">#FF1976D2</color>
-    <color name="dark_blue">#FF0D4781</color>
-    <color name="green">#FF64DD17</color>
-    <color name="light_blue">#FFBBDEFB</color>
-    <color name="red">#FFD50000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="yellow">#FFFFD600</color>
+    <!-- Brand colours -->
+    <color name="vion_primary">#1A1A2E</color>
+    <color name="vion_primary_dark">#0F0F1A</color>
+    <color name="vion_accent">#6C63FF</color>
+    <color name="vion_accent_light">#9D97FF</color>
+
+    <!-- UI chrome -->
+    <color name="toolbar_background">#1A1A2E</color>
+    <color name="bottom_bar_background">#1A1A2E</color>
+    <color name="url_bar_background">#2A2A3E</color>
+    <color name="floating_menu_background">#242438</color>
+    <color name="floating_menu_item_background">#2E2E48</color>
+    <color name="floating_menu_item_pressed">#3A3A58</color>
+
+    <!-- Text -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0C8</color>
+    <color name="text_hint">#707088</color>
+    <color name="url_text">#E8E8FF</color>
+
+    <!-- Icons -->
+    <color name="icon_active">#FFFFFF</color>
+    <color name="icon_inactive">#707088</color>
+    <color name="icon_accent">#6C63FF</color>
+
+    <!-- Privacy indicator -->
+    <color name="privacy_secure">#4CAF50</color>
+    <color name="privacy_warning">#FF9800</color>
+    <color name="privacy_danger">#F44336</color>
+
+    <!-- Progress bar -->
+    <color name="progress_tint">#6C63FF</color>
+
+    <!-- General -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="divider">#2E2E48</color>
+
+    <!-- Tab badge -->
+    <color name="tab_badge_background">#6C63FF</color>
+    <color name="tab_badge_text">#FFFFFF</color>
 </resources>

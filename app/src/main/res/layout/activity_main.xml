@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2015-2016 Soren Stoutner <soren@stoutner.com>.
+  Copyright 2026 Vion Browser Contributors.
+  This file is part of Vion Browser (GPL v3).
+-->
+
+<!--
+  Root layout: vertical LinearLayout
+    1. URL bar (top, fixed height)
+    2. Progress bar (thin, sits below URL bar)
+    3. WebView (fills remaining space)
+    4. Find-in-page bar (hidden by default, slides up above bottom toolbar)
+    5. Bottom toolbar (fixed 56dp height)
+  A FrameLayout wraps items 1-5 to allow the floating menu overlay.
+  fullScreenContainer is a FrameLayout for full-screen video.
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/vion_primary_dark"
+    tools:context=".MainWebViewActivity">
+
+    <!-- Main content column -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- ── URL bar ──────────────────────────────────────────────── -->
+        <LinearLayout
+            android:id="@+id/url_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/url_bar_height"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:background="@color/toolbar_background">
+
+            <!-- SSL / privacy icon -->
+            <ImageView
+                android:id="@+id/ssl_icon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_privacy_mode"
+                android:contentDescription="@string/favorite_icon"
+                android:padding="2dp"
+                android:scaleType="fitCenter" />
+
+            <!-- URL text field fills remaining space -->
+            <EditText
+                android:id="@+id/url_text_box"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/url_bar_background"
+                android:paddingStart="12dp"
+                android:paddingEnd="8dp"
+                android:textColor="@color/url_text"
+                android:textColorHint="@color/text_hint"
+                android:hint="@string/url_hint"
+                android:imeOptions="actionGo|flagNoExtractUi"
+                android:inputType="textUri"
+                android:singleLine="true"
+                android:textSize="14sp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp" />
+
+            <!-- Reload / stop button -->
+            <ImageView
+                android:id="@+id/reload_button"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_reload"
+                android:contentDescription="@string/refresh"
+                android:padding="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitCenter" />
+
+        </LinearLayout>
+
+        <!-- ── Progress bar (2dp, below URL bar) ──────────────────── -->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/progress_bar_height"
+            android:max="100"
+            android:progressTint="@color/progress_tint"
+            android:progressBackgroundTint="@color/transparent"
+            android:visibility="gone" />
+
+        <!-- ── Content area (WebView + Homepage overlay) ──── -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <!-- WebView (SwipeRefresh wrapper) -->
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <WebView
+                    android:id="@+id/main_web_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true" />
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            <!-- Homepage fragment container (Phase 5) -->
+            <FrameLayout
+                android:id="@+id/homepage_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <!-- ── Find-in-page bar (hidden, above bottom toolbar) ──── -->
+        <LinearLayout
+            android:id="@+id/find_in_page_bar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:background="@color/floating_menu_background"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/find_query"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/find_hint"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:background="@android:color/transparent"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textSize="14sp" />
+
+            <ImageButton
+                android:id="@+id/btn_find_prev"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_arrow_up"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/find_previous"
+                android:tint="@color/icon_active" />
+
+            <ImageButton
+                android:id="@+id/btn_find_next"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_arrow_down"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/find_next"
+                android:tint="@color/icon_active" />
+
+            <ImageButton
+                android:id="@+id/btn_find_close"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_close"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/find_done"
+                android:tint="@color/icon_active" />
+
+        </LinearLayout>
+
+        <!-- ── Bottom toolbar (5 buttons, fixed 56dp) ──────────── -->
+        <LinearLayout
+            android:id="@+id/bottom_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_toolbar_height"
+            android:orientation="horizontal"
+            android:background="@color/bottom_bar_background"
+            android:elevation="8dp">
+
+            <!-- Back -->
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/ic_back"
+                android:background="@drawable/bottom_bar_btn_bg"
+                android:contentDescription="@string/btn_back"
+                android:tint="@color/icon_active"
+                android:scaleType="fitCenter"
+                android:padding="@dimen/bottom_toolbar_icon_padding" />
+
+            <!-- Forward -->
+            <ImageButton
+                android:id="@+id/btn_forward"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/ic_forward"
+                android:background="@drawable/bottom_bar_btn_bg"
+                android:contentDescription="@string/btn_forward"
+                android:tint="@color/icon_active"
+                android:scaleType="fitCenter"
+                android:padding="@dimen/bottom_toolbar_icon_padding" />
+
+            <!-- Home -->
+            <ImageButton
+                android:id="@+id/btn_home"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/ic_home"
+                android:background="@drawable/bottom_bar_btn_bg"
+                android:contentDescription="@string/btn_home"
+                android:tint="@color/icon_active"
+                android:scaleType="fitCenter"
+                android:padding="@dimen/bottom_toolbar_icon_padding" />
+
+            <!-- Tabs (with badge overlay) -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/btn_tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_tabs"
+                    android:background="@drawable/bottom_bar_btn_bg"
+                    android:contentDescription="@string/btn_tabs"
+                    android:tint="@color/icon_active"
+                    android:scaleType="fitCenter"
+                    android:padding="@dimen/bottom_toolbar_icon_padding" />
+
+                <!-- Tab count badge -->
+                <TextView
+                    android:id="@+id/tab_count_badge"
+                    android:layout_width="@dimen/tab_badge_size"
+                    android:layout_height="@dimen/tab_badge_size"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/tab_badge_background"
+                    android:textColor="@color/tab_badge_text"
+                    android:textSize="@dimen/tab_badge_text_size"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+            <!-- Menu -->
+            <ImageButton
+                android:id="@+id/btn_menu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/ic_menu_grid"
+                android:background="@drawable/bottom_bar_btn_bg"
+                android:contentDescription="@string/btn_menu"
+                android:tint="@color/icon_active"
+                android:scaleType="fitCenter"
+                android:padding="@dimen/bottom_toolbar_icon_padding" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- ── Floating menu (anchored above bottom toolbar, end-aligned) ── -->
+    <com.vion.browser.ui.menu.FloatingMenuView
+        android:id="@+id/floating_menu"
+        android:layout_width="@dimen/floating_menu_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/floating_menu_background"
+        android:elevation="16dp"
+        android:visibility="gone" />
+
+    <!-- ── Full-screen video container ────────────────────────────────── -->
+    <FrameLayout
+        android:id="@+id/full_screen_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:visibility="gone" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
